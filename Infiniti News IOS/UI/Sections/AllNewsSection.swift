@@ -16,12 +16,12 @@ struct AllNewsSection: View {
     
     var body: some View {
         VStack {
-            Text("All News")
+            Text(WHATS_HAPPENING_AROUND_THE_WORLD)
                 .font(.headline)
             ScrollView(.vertical) {
-                LazyVStack(alignment: .center) {
+                LazyVStack(spacing: 20) {
                     ForEach(articles) { article in
-                        ArticleItem(article: article).padding().frame(width: 50, height: 100)
+                        ArticleItem(article: article, width: .infinity, height: .infinity)
                     }
                 }
             }
@@ -30,5 +30,5 @@ struct AllNewsSection: View {
 }
 
 #Preview {
-//    AllNewsSection()
+    AllNewsSection(articles: [Article(title: "Some title", urlToImage: "https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1679921049/Image_URL_header/Image_URL_header-png?_i=AA"), Article(title: "Some title", urlToImage: "https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1679921049/Image_URL_header/Image_URL_header-png?_i=AA")])
 }

@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct InfinitNewsApp: App {
+    let di: MainDI
+    init() {
+        di = MainDI()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            MainScreen()
+            MainScreen(viewModel: di.getViewModel())
         }
     }
 }

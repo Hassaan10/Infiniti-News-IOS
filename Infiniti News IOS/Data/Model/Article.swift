@@ -42,4 +42,17 @@ struct Article : Codable, Identifiable {
         content = try values.decodeIfPresent(String.self, forKey: .content)
     }
     
+    init(title : String,
+         urlToImage : String?) {
+        self.title = title
+        self.urlToImage = urlToImage
+        
+        self.author = ""
+        self.content = ""
+        self.description = ""
+        self.publishedAt = ""
+        self.source = Source(id: "1", name: "BBC")
+        self.url =  nil
+    }
+    
 }

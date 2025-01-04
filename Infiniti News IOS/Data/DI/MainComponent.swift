@@ -9,18 +9,18 @@ import NeedleFoundation
 
 class MainComponent : BootstrapComponent {
     
-    var newsApi : NewsApi { return NewsApi() }
+    public var newsApi : NewsApi { return NewsApi() }
     
-    var newsRepository: NewsRepository { return shared { NewsRepositoryImpl(api: newsApi) } }
+    public var newsRepository: NewsRepository { return shared { NewsRepositoryImpl(api: newsApi) } }
     
-    var allNewsUseCase: AllNewsUseCase { return shared { AllNewsUseCase(newsRepository: newsRepository) } }
+    public var allNewsUseCase: AllNewsUseCase { return shared { AllNewsUseCase(newsRepository: newsRepository) } }
     
-    var headlinesUseCase: HeadlinesUseCase { return shared { HeadlinesUseCase(newsRepository: newsRepository) } }
+    public var headlinesUseCase: HeadlinesUseCase { return shared { HeadlinesUseCase(newsRepository: newsRepository) } }
     
-    var newsViewModel: ViewModel { return shared { ViewModel(allnewsUsecase: allNewsUseCase, headlineUsecase: headlinesUseCase) } }
+    public var newsViewModel: ViewModel { return shared { ViewModel(allnewsUsecase: allNewsUseCase, headlineUsecase: headlinesUseCase) } }
     
-    var newsView: MainScreen { return shared { MainScreen() } }
+    public var newsView: MainScreen { return shared { MainScreen(viewModel: newsViewModel) } }
     
-    var newsComponent: NewsComponent { return NewsComponent(parent: self) }
+    public var newsComponent: NewsComponent { return NewsComponent(parent: self) }
     
 }

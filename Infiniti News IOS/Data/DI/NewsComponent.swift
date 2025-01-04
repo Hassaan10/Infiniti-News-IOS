@@ -9,16 +9,16 @@ import NeedleFoundation
 
 class NewsComponent : Component<NewsDependency> {
     
-    var newsApi : NewsApi { return shared {NewsApi()} }
+    public var newsApi : NewsApi { return dependency.newsApi }
     
-    var newsRepository: NewsRepository { return shared { NewsRepositoryImpl(api: newsApi) } }
-    
-    var allNewsUseCase: AllNewsUseCase { return shared { AllNewsUseCase(newsRepository: newsRepository) } }
-    
-    var headlinesUseCase: HeadlinesUseCase { return shared { HeadlinesUseCase(newsRepository: newsRepository) } }
-    
-    var newsViewModel: ViewModel { return shared { ViewModel(allnewsUsecase: allNewsUseCase, headlineUsecase: headlinesUseCase) } }
-    
-    var newsView: MainScreen { return shared { MainScreen() } }
+    public var newsRepository: NewsRepository { return NewsRepositoryImpl(api: dependency.newsApi) }
+
+    public var allNewsUseCase: AllNewsUseCase { return shared { AllNewsUseCase(newsRepository: dependency.newsRepository) } }
+
+    public var headlinesUseCase: HeadlinesUseCase { return shared { HeadlinesUseCase(newsRepository: dependency.newsRepository) } }
+
+    public var newsViewModel: ViewModel { return shared { ViewModel(allnewsUsecase: dependency.allNewsUseCase, headlineUsecase: dependency.headlinesUseCase) } }
+
+    public var newsView: MainScreen { return shared { MainScreen(viewModel: newsViewModel) } }
         
 }

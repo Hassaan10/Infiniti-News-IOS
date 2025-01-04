@@ -16,7 +16,7 @@ class NewsRepositoryImpl : NewsRepository {
     
     func fetchAllNews() async -> ApiResponse {
         do {
-            let result = try await api.call(endPoint: "everything?q=keyword")
+            let result = try await api.call(endPoint: ALL_NEWS_URL)
             return ApiResponse.data(result.articles)
         }
         catch {
@@ -26,7 +26,7 @@ class NewsRepositoryImpl : NewsRepository {
     
     func fetchHeadlines() async -> ApiResponse {
         do {
-            let result = try await api.call(endPoint: "top-headlines?country=us")
+            let result = try await api.call(endPoint: HEADLINES_URL)
             return ApiResponse.data(result.articles)
         }
         catch {
