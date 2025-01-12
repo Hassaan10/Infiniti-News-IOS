@@ -34,7 +34,7 @@ This app follows **Clean Architecture**, which divides the app into the followin
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/news-app-ios.git
+   git clone https://github.com/Hassaan10/Infiniti-News-IOS.git
 2. Open the project in Xcode.
 3. Install the required dependencies using CocoaPods, Carthage, or Swift Package Manager.
 4. Build and run the app on an iOS simulator or a physical device.
