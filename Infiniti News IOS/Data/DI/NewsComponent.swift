@@ -18,7 +18,5 @@ class NewsComponent : Component<NewsDependency> {
     public var headlinesUseCase: HeadlinesUseCase { return shared { HeadlinesUseCase(newsRepository: dependency.newsRepository) } }
 
     public var newsViewModel: ViewModel { return shared { ViewModel(allnewsUsecase: dependency.allNewsUseCase, headlineUsecase: dependency.headlinesUseCase) } }
-
-    public var newsView: MainScreen { return shared { MainScreen(viewModel: newsViewModel) } }
         
 }

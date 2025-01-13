@@ -11,8 +11,8 @@ struct MainScreen: View {
     
     @ObservedObject var viewModel : ViewModel
     
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
+    init() {
+        self.viewModel = MainDI().getViewModel()
     }
     
     var body: some View {
@@ -42,5 +42,5 @@ struct MainScreen: View {
 }
 
 #Preview {
-    MainScreen(viewModel: MainDI().getViewModel())
+    MainScreen()
 }

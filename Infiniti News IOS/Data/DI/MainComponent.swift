@@ -18,9 +18,7 @@ class MainComponent : BootstrapComponent {
     public var headlinesUseCase: HeadlinesUseCase { return shared { HeadlinesUseCase(newsRepository: newsRepository) } }
     
     public var newsViewModel: ViewModel { return shared { ViewModel(allnewsUsecase: allNewsUseCase, headlineUsecase: headlinesUseCase) } }
-    
-    public var newsView: MainScreen { return shared { MainScreen(viewModel: newsViewModel) } }
-    
+        
     public var newsComponent: NewsComponent { return NewsComponent(parent: self) }
     
 }
