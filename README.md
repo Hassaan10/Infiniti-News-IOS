@@ -43,6 +43,11 @@ Add your API key into the constants file (X-Api-Key = 'YOUR_API_KEY')
 
 ## Screenshots
 
+|                     Splash                     |                     Main                     |                    Detail                     |
+|:----------------------------------------------:|:--------------------------------------------:|:---------------------------------------------:|
+|  <img src="https://github.com/user-attachments/assets/76d506e1-db5e-4f0d-9216-547ab28aef77" width="250" />  | <img src="https://github.com/user-attachments/assets/bd6e0b59-0fdc-4191-893c-5af790ec6309" width="250" /> | <img src="https://github.com/user-attachments/assets/76bd6e15-0c80-4c42-ac37-7f59acc2feff" width="250" />  |
+
+
 ## API Documentation
 This app fetches news data from the News API. You may need to create a free account and generate an API key to use the app with your own API key.
 
